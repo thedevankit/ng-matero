@@ -87,16 +87,16 @@ export class InMemDataService implements InMemoryDbService {
   private users: User[] = [
     {
       id: 1,
-      username: 'ng-matero',
-      password: 'ng-matero',
-      name: 'Zongbin',
+      username: 'thedevankit',
+      password: '123123',
+      name: 'Ankitkumar Singh',
       email: 'nzb329@163.com',
       avatar: './assets/images/avatar.jpg',
     },
     {
       id: 2,
       username: 'recca0120',
-      password: 'password',
+      password: '123123',
       name: 'recca0120',
       email: 'recca0120@gmail.com',
       avatar: './assets/images/avatars/avatar-10.jpg',

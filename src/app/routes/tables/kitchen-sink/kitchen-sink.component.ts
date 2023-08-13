@@ -4,6 +4,7 @@ import { MtxGridColumn } from '@ng-matero/extensions/grid';
 import { TranslateService } from '@ngx-translate/core';
 import { TablesDataService } from '../data.service';
 import { TablesKitchenSinkEditComponent } from './edit/edit.component';
+import { DashboardService } from 'app/routes/dashboard/dashboard.service';
 
 @Component({
   selector: 'app-table-kitchen-sink',
@@ -13,6 +14,8 @@ import { TablesKitchenSinkEditComponent } from './edit/edit.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TablesKitchenSinkComponent implements OnInit {
+  messages = this.dataSrv.getMessages();
+
   columns: MtxGridColumn[] = [
     {
       header: this.translate.stream('table_kitchen_sink.position'),
@@ -64,7 +67,7 @@ export class TablesKitchenSinkComponent implements OnInit {
     {
       header: this.translate.stream('table_kitchen_sink.city'),
       field: 'city',
-      minWidth: 120,
+      minWidth: 200,
     },
     {
       header: this.translate.stream('table_kitchen_sink.address'),
@@ -89,9 +92,9 @@ export class TablesKitchenSinkComponent implements OnInit {
     },
     {
       header: this.translate.stream('table_kitchen_sink.operation'),
-      field: 'operation',
+      field: 'Action',
       minWidth: 160,
-      width: '160px',
+      width: '100px',
       pinned: 'right',
       type: 'button',
       buttons: [
@@ -104,7 +107,7 @@ export class TablesKitchenSinkComponent implements OnInit {
         {
           color: 'warn',
           icon: 'delete',
-          text: this.translate.stream('table_kitchen_sink.delete'),
+          // text: this.translate.stream('table_kitchen_sink.delete'),
           tooltip: this.translate.stream('table_kitchen_sink.delete'),
           pop: {
             title: this.translate.stream('table_kitchen_sink.confirm_delete'),
@@ -122,7 +125,7 @@ export class TablesKitchenSinkComponent implements OnInit {
   multiSelectable = true;
   rowSelectable = true;
   hideRowSelectionCheckbox = false;
-  showToolbar = true;
+  showToolbar = false;
   columnHideable = true;
   columnSortable = true;
   columnPinnable = true;
@@ -142,6 +145,15 @@ export class TablesKitchenSinkComponent implements OnInit {
   ngOnInit() {
     this.list = this.dataSrv.getData();
     this.isLoading = false;
+  }
+
+
+  add() {
+    const dialogRef = this.dialog.originalOpen(TablesKitchenSinkEditComponent, {
+      width: '600px',
+      data: { record: null },
+    });
+    dialogRef.afterClosed().subscribe(() => console.log('The dialog was closed'));
   }
 
   edit(value: any) {

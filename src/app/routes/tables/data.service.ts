@@ -319,8 +319,46 @@ const ELEMENT_DATA: PeriodicElement[] = [
   },
 ];
 
+const MESSAGES = [
+  {
+    img: 'assets/images/avatars/avatar-1.jpg',
+    subject: 'Hydrogen',
+    content: `Cras sit amet nibh libero, in gravida nulla.
+     Nulla vel metus scelerisque ante sollicitudin commodo.`,
+  },
+  {
+    img: 'assets/images/avatars/avatar-2.jpg',
+    subject: 'Helium',
+    content: `Cras sit amet nibh libero, in gravida nulla.
+     Nulla vel metus scelerisque ante sollicitudin commodo.`,
+  },
+  {
+    img: 'assets/images/avatars/avatar-3.jpg',
+    subject: 'Lithium',
+    content: `Cras sit amet nibh libero, in gravida nulla.
+     Nulla vel metus scelerisque ante sollicitudin commodo.`,
+  },
+  {
+    img: 'assets/images/avatars/avatar-4.jpg',
+    subject: 'Beryllium',
+    content: `Cras sit amet nibh libero, in gravida nulla.
+     Nulla vel metus scelerisque ante sollicitudin commodo.`,
+  },
+  {
+    img: 'assets/images/avatars/avatar-6.jpg',
+    subject: 'Boron',
+    content: `Cras sit amet nibh libero, in gravida nulla.
+     Nulla vel metus scelerisque ante sollicitudin commodo.`,
+  },
+];
+
 @Injectable()
 export class TablesDataService {
+
+  getMessages() {
+    return MESSAGES;
+  }
+
   getData() {
     return ELEMENT_DATA;
   }

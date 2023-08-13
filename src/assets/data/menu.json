@@ -11,6 +11,15 @@
       }
     },
     {
+      "route": "tables",
+      "name": "tables",
+      "type": "link",
+      "icon": "format_line_spacing",
+      "permissions": {
+        "except": "GUEST"
+      }
+    },
+    {
       "route": "design",
       "name": "design",
       "type": "sub",
@@ -331,27 +340,6 @@
         {
           "route": "datetime",
           "name": "datetime",
-          "type": "link"
-        }
-      ],
-      "permissions": {
-        "except": "GUEST"
-      }
-    },
-    {
-      "route": "tables",
-      "name": "tables",
-      "type": "sub",
-      "icon": "format_line_spacing",
-      "children": [
-        {
-          "route": "kitchen-sink",
-          "name": "kitchen-sink",
-          "type": "link"
-        },
-        {
-          "route": "remote-data",
-          "name": "remote-data",
           "type": "link"
         }
       ],

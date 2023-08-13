@@ -1,6 +1,7 @@
-<page-header class="bg-green-600"></page-header>
+<!-- <page-header class="bg-green-600"></page-header> -->
 
-<div class="data-grid-options">
+
+<!-- <div class="data-grid-options">
   <mat-checkbox [(ngModel)]="rowSelectable">Row Selectable</mat-checkbox>
   <mat-checkbox [(ngModel)]="hideRowSelectionCheckbox">Hide checkbox</mat-checkbox>
   <mat-radio-group [(ngModel)]="multiSelectable">
@@ -18,11 +19,58 @@
   <mat-checkbox [(ngModel)]="showPaginator">Show Paginator</mat-checkbox>
   <mat-checkbox [(ngModel)]="isLoading">Loading Status</mat-checkbox>
   <mat-checkbox [(ngModel)]="columnResizable">Column Resizable</mat-checkbox>
+</div> -->
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <mat-card [ngClass]="['text-white', 'bg-indigo-500']">
+      <mat-card-header>
+        <mat-card-subtitle class="text-white">Occupancy</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <h2 class="m-y-8">Test</h2>
+
+        <small class="text-muted">Monthly</small>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Charts -->
+  <div class="col-sm-6 col-md-4">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Recent Activities</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-list>
+          <mat-list-item *ngFor="let message of messages">
+            <img matListItemAvatar [src]="message.img" alt="Avatar">
+            <h3 matListItemTitle>{{message.subject}}</h3>
+            <p matListItemLine>
+              <span>{{message.content}} </span>
+            </p>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div class="col-sm-6 col-md-4">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Weekly Revenue</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div id="chart2"></div>
+      </mat-card-content>
+    </mat-card>
+  </div>
 </div>
-<p>
-  <a href="https://ng-matero.github.io/extensions/components/data-grid" target="_blank">
-    View more examples</a>
-</p>
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+  </div>
+  <div class="col-sm-6 col-md-4">
+  </div>
+</div>
+<button mat-raised-button class="bg-purple-500 text-white" (click)="add()">Add </button>
 
 <mtx-grid [data]="list"
           [columns]="columns"
@@ -34,7 +82,7 @@
           [rowHover]="rowHover"
           [rowStriped]="rowStriped"
           [showToolbar]="showToolbar"
-          [toolbarTitle]="'Data Grid Toolbar'"
+          [toolbarTitle]="'Reservation Table'"
           [columnHideable]="columnHideable"
           [columnSortable]="columnSortable"
           [columnPinnable]="columnPinnable"

@@ -11,6 +11,7 @@ export class LoginService {
   constructor(protected http: HttpClient) {}
 
   login(username: string, password: string, rememberMe = false) {
+    debugger;
     return this.http.post<Token>('/auth/login', { username, password, rememberMe });
   }
 
